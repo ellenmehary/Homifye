@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sd2-db`
+-- Database: `Homifye`
 --
 
 -- --------------------------------------------------------
@@ -27,18 +27,23 @@ SET time_zone = "+00:00";
 -- Table structure for table `test_table`
 --
 
-CREATE TABLE `test_table` (
-  `id` int NOT NULL,
-  `name` varchar(512) NOT NULL
+CREATE TABLE `Admin` (
+  `admin_id` int NOT NULL,
+  `admin_name` varchar(512) NOT NULL,
+  'age' int,
+  'gender' varchar(1) NOT NULL,
+  'phone_no' int(10) NOT NULL,
+  'email_id' varchar(50) NOT NULL,
+  PRIMARY KEY ('admin_id') 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `test_table`
 --
 
-INSERT INTO `test_table` (`id`, `name`) VALUES
-(1, 'Lisa'),
-(2, 'Kimia');
+--INSERT INTO `` (``, ``) VALUES
+--(1, 'Lisa'),
+--(2, 'Kimia');
 
 --
 -- Indexes for dumped tables
@@ -47,8 +52,8 @@ INSERT INTO `test_table` (`id`, `name`) VALUES
 --
 -- Indexes for table `test_table`
 --
-ALTER TABLE `test_table`
-  ADD PRIMARY KEY (`id`);
+--ALTER TABLE `test_table`
+--  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -57,9 +62,9 @@ ALTER TABLE `test_table`
 --
 -- AUTO_INCREMENT for table `test_table`
 --
-ALTER TABLE `test_table`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
+--ALTER TABLE `test_table`
+--  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
