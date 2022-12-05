@@ -30,11 +30,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `Admin` (
   `admin_id` int NOT NULL,
   `admin_name` varchar(512) NOT NULL,
-  'age' int,
-  'gender' varchar(1) NOT NULL,
-  'phone_no' int(10) NOT NULL,
-  'email_id' varchar(50) NOT NULL,
-  PRIMARY KEY ('admin_id') 
+  `age` int,
+  `gender` varchar(1) NOT NULL,
+  `phone_no` int(10) NOT NULL,
+  `email_id` varchar(50) NOT NULL,
+  PRIMARY KEY (`admin_id`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
