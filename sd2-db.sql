@@ -56,16 +56,16 @@ FOREIGN KEY (home) REFERENCES Home(home_id))ENGINE=InnoDB DEFAULT CHARSET=utf8mb
 -- Dumping data for table `test_table`
 --
 INSERT INTO `Admin` (`admin_id`, `admin_name`, `age`, `gender`, `phone_no`, `email_id`) VALUES 
-('1', 'Ellen', '28', 'F', '1234567890', 'ellen@abc.com')
+('1', 'Ellen', '28', 'F', '1234567890', 'ellen@abc.com'),
 ('2', 'Zahra', '24', 'F', '0987654321', 'zahra@abc.com');
 
 INSERT INTO `Home` (`home_id`, `home_name`, `full_address`, `admin_id`) VALUES
-(`1`, `Zahra's Sweet Home`, `32B Star lane E34 $6G`, 2),
-(`2`, `Ellen's Sweet Home`, `32A Star Lane E34 45G`, 1);
+('1', 'Zahra`s Sweet Home', '32B Star lane E34 $6G', '2'),
+('2', 'Ellen`s Sweet Home', '32A Star Lane E34 45G','1');
 
 INSERT INTO `Admin_Homes` (admin, home) VALUES
-(`1`, `2`),
-(`2`, `2`);
+('1', '2'),
+('2', '1');
 
 --
 -- Indexes for dumped tables
@@ -73,6 +73,7 @@ INSERT INTO `Admin_Homes` (admin, home) VALUES
 
 --
 -- Indexes for table `test_table`
+
 --
 --ALTER TABLE `test_table`
 --  ADD PRIMARY KEY (`id`);
