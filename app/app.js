@@ -19,6 +19,10 @@ app.get("/", function(req, res) {
     res.send("Hello,World");
 });
 
+app.get("/home", function(req,res) {
+    res.send("xxx");
+});
+
 // Create a route for testing the db
 app.get("/db_test", function(req, res) {
     // Assumes a table called test_table exists in your database
