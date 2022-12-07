@@ -40,7 +40,7 @@
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" id="mySidebar" style="z-index:3;width:300px;"><br/>
   <div class="w3-container w3-row">
     <hr/>
-    <div class="w3-bar-block"><a class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" href="#" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i> Close Menu</a><a class="w3-bar-item w3-button w3-padding w3-blue" href="#"><i class="fa fa-bank fa-fw"></i> Dashboard</a><a class="w3-bar-item w3-button w3-padding" href="#"><i class="fa fa-home fa-fw"></i> Home Details</a><a class="w3-bar-item w3-button w3-padding" href="#"><i class="fa fa-users fa-fw"></i> Personal etails</a><a class="w3-bar-item w3-button w3-padding" href="#"><i class="fa fa-eye fa-fw"></i> Chart Data</a></div>
+    <div class="w3-bar-block"><a class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" href="#" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i> Close Menu</a><a class="w3-bar-item w3-button w3-padding w3-blue" href="index.pug"><i class="fa fa-bank fa-fw"></i> Dashboard</a><a class="w3-bar-item w3-button w3-padding" href="homes-details"><i class="fa fa-home fa-fw"></i> Home Details</a><a class="w3-bar-item w3-button w3-padding" href="href"><i class="fa fa-users fa-fw"></i> Members details</a><a class="w3-bar-item w3-button w3-padding" href="href"><i class="fa fa-edit fa-fw"></i>Tasks Details</a><a class="w3-bar-item w3-button w3-padding" href="href"><i class="fa fa-eye fa-fw"></i> Chart Data</a></div>
   </div>
 </nav>
 <!--  Overlay effect when opening sidebar on small screens -->
@@ -56,40 +56,40 @@
       <div class="w3-container w3-red w3-padding-16">
         <div class="w3-left"><i class="fa fa-home w3-xxlarge"></i></div>
         <div class="w3-right">
-          <h3>3</h3>
+          <h3>2</h3>
         </div>
-        <div class="w3-clear"></div>
-        <h4>Added Homes</h4>
+        <div class="w3-clear"></div><a href="homes-details">
+          <h4>Added Homes</h4></a>
       </div>
     </div>
     <div class="w3-quarter">
       <div class="w3-container w3-blue w3-padding-16">
         <div class="w3-left"><i class="fa fa-hourglass-half w3-xxlarge"></i></div>
         <div class="w3-right">
-          <h3>4</h3>
+          <h3>0</h3>
         </div>
-        <div class="w3-clear"></div>
-        <h4>Pending Tasks</h4>
+        <div class="w3-clear"></div><a href="homes-details">
+          <h4>Pending Tasks</h4></a>
       </div>
     </div>
     <div class="w3-quarter">
       <div class="w3-container w3-teal w3-padding-16">
         <div class="w3-left"><i class="fa fa-thumbs-up w3-xxlarge"></i></div>
         <div class="w3-right">
-          <h3>12</h3>
+          <h3>0</h3>
         </div>
-        <div class="w3-clear"></div>
-        <h4>Finished Tasks</h4>
+        <div class="w3-clear"></div><a href="#">
+          <h4>Finished Tasks</h4></a>
       </div>
     </div>
     <div class="w3-quarter">
       <div class="w3-container w3-orange w3-text-white w3-padding-16">
         <div class="w3-left"><i class="fa fa-gbp w3-xxlarge"></i></div>
         <div class="w3-right">
-          <h3>£2300</h3>
+          <h3>0</h3>
         </div>
-        <div class="w3-clear"></div>
-        <h4>Amount Spend</h4>
+        <div class="w3-clear"></div><a href="#">
+          <h4>Amount Spend</h4></a>
       </div>
     </div>
   </div>
@@ -119,4 +119,3 @@
     mySidebar.style.display = "none";
     overlayBg.style.display = "none";
   }
-</script>
