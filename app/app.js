@@ -19,13 +19,9 @@ app.get("/", function(req, res) {
     res.render("index");
 });
 
-app.get("/home-details", function(req, res) {
-    res.render("homes-details");
-});
-
 app.get("/admin", function(req, res) {
     // Assumes a table called test_table exists in your database
-    sql = 'select * from Admin';
+    sql = 'select * from Home';
     db.query(sql).then(results => {
         console.log(results);
         res.json(results);
