@@ -19,6 +19,10 @@ app.get("/", function(req, res) {
     res.render("index");
 });
 
+app.get("/homes-details", function(req, res) {
+    res.render("homes-details");
+});
+
 app.get("/admin", function(req, res) {
     // Assumes a table called test_table exists in your database
     sql = 'select * from Home';
