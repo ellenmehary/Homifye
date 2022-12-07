@@ -75,8 +75,7 @@ INSERT INTO `Admin_Homes` (admin, home) VALUES
 -- Indexes for table `test_table`
 
 --
---ALTER TABLE `test_table`
---  ADD PRIMARY KEY (`id`);
+
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -85,9 +84,7 @@ INSERT INTO `Admin_Homes` (admin, home) VALUES
 --
 -- AUTO_INCREMENT for table `test_table`
 --
---ALTER TABLE `test_table`
---  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -16,42 +16,49 @@ const db = require('./services/db');
 
 // Create a route for root - /
 app.get("/", function(req, res) {
-    res.send("Hello,World");
+    res.render("index");
 });
 
-app.get("/home", function(req,res) {
-    res.send("xxx");
-});
-
-// Create a route for testing the db
-app.get("/db_test", function(req, res) {
+app.get("/admin", function(req, res) {
     // Assumes a table called test_table exists in your database
-    var sql = 'select * from Homifye';
-    // As we are not inside an async function we cannot use await
-    // So we use .then syntax to ensure that we wait until the 
-    // promise returned by the async function is resolved before we proceed
+    sql = 'select * from Admin';
     db.query(sql).then(results => {
         console.log(results);
-        res.json(results)
+        res.json(results);
     });
 });
 
-// Create a route for /goodbye
-// Responds to a 'GET' request
-app.get("/goodbye", function(req, res) {
-    res.send("Goodbye world!");
+// Task 2 display a formatted list of Admin
+app.get("/admin-formatted", function(req, res) {
+    var sql = 'select * from Admin';
+    db.query(sql).then(results => {
+    	    // Send the results rows to the all-students template
+    	    // The rows will be in a variable called data
+        res.render('admininfo', {data: results});
+    });
 });
 
-// Create a dynamic route for /hello/<name>, where name is any value provided by user
-// At the end of the URL
-// Responds to a 'GET' request
-app.get("/hello/:name", function(req, res) {
-    // req.params contains any parameters in the request
-    // We can examine it in the console for debugging purposes
-    console.log(req.params);
-    //  Retrieve the 'name' parameter and use it in a dynamically generated page
-    res.send("Hello " + req.params.name);
+
+//display a formatted list of admin_id 
+app.get("/admin_homes", function(req, res) {
+    sql = 'select * from Admin_Homes';
+    db.query(sql).then(results => {
+        console.log(results);
+        res.render('admin_home', {results});
+    });
 });
+
+
+//display a formatted list of admin table
+app.get("/dashboard", function(req, res) {
+     sql = 'select * from Admin';
+    db.query(sql).then(results => {
+    	    // Send the results rows to the all-students template
+    	    // The rows will be in a variable called data
+        res.render('admin', {data: results});
+    });
+});
+
 
 // Start server on port 3000
 app.listen(3000,function(){
