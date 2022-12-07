@@ -16,7 +16,7 @@ const db = require('./services/db');
 
 // Create a route for root - /
 app.get("/", function(req, res) {
-    res.render("index");
+    res.render("dashboard");
 });
 
 app.get("/homes-details", function(req, res) {
