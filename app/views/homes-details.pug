@@ -1,44 +1,38 @@
-title Home-Deatils
+title Home-Details
 meta(charset='UTF-8')
 meta(name='viewport' content='width=device-width,initial-scale=1')
 link(rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css')
 link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway')
 link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
 style.
-  
   html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-  
   #table {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
   }
   table center {
-    margin-left: auto; 
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
   }
   #table td, #table th {
-    border: 1px solid #ddd;
-    padding: 8px;
+  border: 1px solid #ddd;
+  padding: 8px;
   }
-  
   #table tr:nth-child(even){background-color: #f2f2f2;}
-  
   #table tr:hover {background-color: #ddd;}
-  
   #table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #008B8B;
-    color: white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #008B8B;
+  color: white;
   }
-  
-//  Top container 
+// Top container
 .w3-bar.w3-top.w3-black.w3-large(style='z-index:4')
   span.w3-bar-item.w3-left Homifye
-//  Sidebar/menu 
-nav.w3-sidebar.w3-collapse.w3-white.w3-animate-left#mySidebar(style='z-index:3;width:300px;')
+// Sidebar/menu
+nav#mySidebar.w3-sidebar.w3-collapse.w3-white.w3-animate-left(style='z-index:3;width:300px;')
   br
   .w3-container.w3-row
     hr
@@ -46,28 +40,31 @@ nav.w3-sidebar.w3-collapse.w3-white.w3-animate-left#mySidebar(style='z-index:3;w
       a.w3-bar-item.w3-button.w3-padding-16.w3-hide-large.w3-dark-grey.w3-hover-black(href='#' onclick='w3_close()' title='close menu')
         i.fa.fa-remove.fa-fw
         |  Close Menu
-      a.w3-bar-item.w3-button.w3-padding(href)
+      a.w3-bar-item.w3-button.w3-padding(href='index.html')
         i.fa.fa-bank.fa-fw
         |  Dashboard
       a.w3-bar-item.w3-button.w3-padding.w3-blue(href='homes-details')
         i.fa.fa-home.fa-fw
         |  Home Details
-      a.w3-bar-item.w3-button.w3-padding(href)
+      a.w3-bar-item.w3-button.w3-padding(href='href')
         i.fa.fa-users.fa-fw
-        |  Personal etails
-      a.w3-bar-item.w3-button.w3-padding(href)
+        |  Members details
+      a.w3-bar-item.w3-button.w3-padding(href='href')
+        i.fa.fa-edit.fa-fw
+        | Tasks Details
+      a.w3-bar-item.w3-button.w3-padding(href='href')
         i.fa.fa-eye.fa-fw
         |  Chart Data
-//  Overlay effect when opening sidebar on small screens 
-.w3-overlay.w3-hide-large.w3-animate-opacity#myOverlay(onclick='w3_close()' style='cursor:pointer' title='close side menu')
-//  !PAGE CONTENT! 
+// Overlay effect when opening sidebar on small screens
+#myOverlay.w3-overlay.w3-hide-large.w3-animate-opacity(onclick='w3_close()' style='cursor:pointer' title='close side menu')
+// !PAGE CONTENT!
 .w3-main(style='margin-left:300px;margin-top:43px;')
-  //  Header 
+  // Header
   header.w3-container(style='padding-top:22px')
     h5
       b
-        i.fa.fa-dashboard
-        |  Dashboard
+        i.fa.fa-home
+        |  Home Details
   .w3-row-padding.w3-margin-bottom
     .w3-quarter
       .w3-container.w3-red.w3-padding-16
@@ -108,7 +105,7 @@ nav.w3-sidebar.w3-collapse.w3-white.w3-animate-left#mySidebar(style='z-index:3;w
   .w3-panel
     .w3-row-padding(style='margin:0 -16px')
       .w3-twothird
-        h5 HOMES
+        h5 All Home-Details
         table#table
           tbody
             tr
@@ -120,29 +117,25 @@ nav.w3-sidebar.w3-collapse.w3-white.w3-animate-left#mySidebar(style='z-index:3;w
               td
               td
   hr
-  //  End page content 
+  // End page content
 script.
-  
   // Get the Sidebar
   var mySidebar = document.getElementById("mySidebar");
-  
   // Get the DIV with overlay effect
   var overlayBg = document.getElementById("myOverlay");
-  
   // Toggle between showing and hiding the sidebar, and add overlay effect
   function w3_open() {
-    if (mySidebar.style.display === 'block') {
-      mySidebar.style.display = 'none';
-      overlayBg.style.display = "none";
-    } else {
-      mySidebar.style.display = 'block';
-      overlayBg.style.display = "block";
-    }
+  if (mySidebar.style.display === 'block') {
+  mySidebar.style.display = 'none';
+  overlayBg.style.display = "none";
+  } else {
+  mySidebar.style.display = 'block';
+  overlayBg.style.display = "block";
   }
-  
+  }
   // Close the sidebar with the close button
   function w3_close() {
-    mySidebar.style.display = "none";
-    overlayBg.style.display = "none";
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
   }
-  
+  </body></html>
