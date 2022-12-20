@@ -23,39 +23,18 @@ app.get("/homes-details", function(req, res) {
     res.render("homes-details");
 });
 
-app.get("/admin", function(req, res) {
-    // Assumes a table called test_table exists in your database
-    sql = 'select * from Home';
+//JSON formatted listing of home details
+app.get("/admin", function(req,res) {
+    var sql = 'select * from Home';
     db.query(sql).then(results => {
         console.log(results);
         res.json(results);
     });
 });
 
-// Task 2 display a formatted list of Admin
-app.get("/admin-formatted", function(req, res) {
-    var sql = 'select * from Admin';
-    db.query(sql).then(results => {
-    	    // Send the results rows to the all-students template
-    	    // The rows will be in a variable called data
-        res.render('admininfo', {data: results});
-    });
-});
-
-
-//display a formatted list of admin_id 
-app.get("/admin_homes", function(req, res) {
-    sql = 'select * from Admin_Homes';
-    db.query(sql).then(results => {
-        console.log(results);
-        res.render('admin_home', {results});
-    });
-});
-
-
-//display a formatted list of admin table
+//display a formatted list of home details
 app.get("/dashboard", function(req, res) {
-     sql = 'select * from Admin';
+     sql = 'select * from Home';
     db.query(sql).then(results => {
     	    // Send the results rows to the all-students template
     	    // The rows will be in a variable called data
