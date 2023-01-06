@@ -2,10 +2,11 @@ extends layout
 block content
     - console.log(data)
     .main-content 
-    h1 All Admin 
+    h1 All Home 
     table(border=1)
         for item in data 
             tr  
-                td #{item.id}
+                td #{item.home_id}
                 td 
-                    a(href='/Admin-single/' + item.id) #{item.name}
+                    a(href='/Home/' + item.home_id) #{item.home_name}
+                td #{item.full_address}

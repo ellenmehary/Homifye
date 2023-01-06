@@ -19,22 +19,27 @@ app.get("/", function(req, res) {
     res.render("dashboard");
 });
 
-app.get("/homes-details", function(req, res) {
-    res.render("homes-details");
-});
-
 //JSON formatted listing of home details
 app.get("/admin", function(req,res) {
-    var sql = 'select * from Home';
+    var sql = 'select h.*, a.admin_name from Home, admin where h.admin_id = a.admin_id';
     db.query(sql).then(results => {
         console.log(results);
         res.json(results);
     });
 });
 
+app.get("/homes-details", function(req, res) {
+    sql = 'select h.home_name, h.full_address, a.admin_name from Home h, Admin a where h.admin_id = a.admin_id';
+    db.query(sql).then(results => {
+    	    // Send the results rows to the all-students template
+    	    // The rows will be in a variable called data
+        res.render('homes-details', {data: results});
+    });
+});
+
 //display a formatted list of home details
 app.get("/dashboard", function(req, res) {
-     sql = 'select * from Home';
+     sql = 'select h.home_name, h.full_address, a.admin_name from Home h, Admin a where h.admin_id = a.admin_id';
     db.query(sql).then(results => {
     	    // Send the results rows to the all-students template
     	    // The rows will be in a variable called data
