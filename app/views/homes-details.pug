@@ -108,15 +108,15 @@ nav#mySidebar.w3-sidebar.w3-collapse.w3-black.w3-animate-left(style='z-index:3;w
         h5 All Home-Details
         table#table
           tbody
-          for item in data
             tr
               th Home Name
               th Adress
               th Admin
-            tr
-              td #{item.home_name}
-              td #{item.full_address}
-              td #{item.admin_name}
+            for item in data
+              tr
+                td #{item.home_name}
+                td #{item.full_address}
+                td #{item.admin_name}
   hr
   // End page content
 script.
