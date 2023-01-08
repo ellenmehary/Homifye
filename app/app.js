@@ -37,7 +37,7 @@ app.get("/homes-details", function(req, res) {
     });
 });
 
-app.get("/home", function(req, res) {
+app.get("/login", function(req, res) {
     sql = 'select h.home_name, h.full_address, a.admin_name from Home h, Admin a where h.admin_id = a.admin_id';
     db.query(sql).then(results => {
     	    // Send the results rows to the all-students template
