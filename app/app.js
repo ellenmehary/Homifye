@@ -37,16 +37,23 @@ app.get("/homes-details", function(req, res) {
     });
 });
 
-//display a formatted list of home details
-app.get("/dashboard", function(req, res) {
-     sql = 'select h.home_name, h.full_address, a.admin_name from Home h, Admin a where h.admin_id = a.admin_id';
+app.get("/login", function(req, res) {
+    sql = 'select h.home_name, h.full_address, a.admin_name from Home h, Admin a where h.admin_id = a.admin_id';
     db.query(sql).then(results => {
     	    // Send the results rows to the all-students template
     	    // The rows will be in a variable called data
-        res.render('admin', {data: results});
+        res.render('login', {data: results});
     });
 });
 
+app.get("/add-member", function(req, res) {
+    sql = 'select h.home_name, h.full_address, a.admin_name from Home h, Admin a where h.admin_id = a.admin_id';
+    db.query(sql).then(results => {
+    	    // Send the results rows to the all-students template
+    	    // The rows will be in a variable called data
+        res.render('addmember', {data: results});
+    });
+});
 
 // Start server on port 3000
 app.listen(3000,function(){
