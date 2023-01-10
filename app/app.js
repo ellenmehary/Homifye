@@ -43,18 +43,6 @@ app.get('/login', function(req, res) {
         res.render('login');
     });
 
-app.post('/add-note', function (req, res) {
-    // Adding a try/catch block which will be useful later when we add to the database
-    try {
-        // Just a console.log for now to check we are receiving the form field values
-        console.log(req.body);
-     } catch (err) {
-         console.error(`Error while adding note `, err.message);
-     }
-     // Just a little output for now
-     res.send('form submitted');
-
-});
 
 // Check submitted email and password pair
 app.post('/authenticate', async function (req, res) {
