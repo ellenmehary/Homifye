@@ -19,8 +19,13 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // Create a route for root - /
-app.get("/dashboard", function(req, res) {
-    res.render("dashboard");
+app.get("/", function(req, res) {
+    res.render("homepage");
+});
+
+// Code for Dashboard/
+app.get('/dashboard', function(req, res) {
+    res.render('dashboard');
 });
 
 //Home-Details Page Code//
