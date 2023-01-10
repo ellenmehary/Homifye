@@ -15,6 +15,7 @@ app.set('views', './app/views');
 
 // Get the functions in the db.js file to use
 const db = require('./services/db');
+
 app.use(express.urlencoded({ extended: true }));
 
 
@@ -38,11 +39,15 @@ app.get("/homes-details", function(req, res) {
     });
 });
 
+//ADD NEW MEMBER PAGE//
+app.get('/add-member', function(req, res) {
+    res.render('addmember');
+});
+
 //Login Page Code//
 app.get('/login', function(req, res) {
         res.render('login');
     });
-
 
 // Check submitted email and password pair
 app.post('/authenticate', async function (req, res) {
@@ -53,7 +58,7 @@ app.post('/authenticate', async function (req, res) {
         if (uId) {
             match = await user.authenticate(params.password);
             if (match) {
-                res.redirect('/' + uId);
+                res.redirect('/dashboard');
             }
             else {
                 // TODO improve the user journey here
@@ -68,30 +73,36 @@ app.post('/authenticate', async function (req, res) {
     }
 });
 
+// Register Page Code//
+ app.get('/register', function(req, res) {
+        res.render('register');
+    });
+
+ // REGISTER DATA TO BACKEND//   
 app.post('/set-password', async function (req, res) {
-        params = req.body;
-        var user = new User(params.email);
-        try {
-            uId = await user.getIdFromEmail();
-            if (uId) {
-                // If a valid, existing user is found, set the password and redirect to the users single-student page
-                await user.setUserPassword(params.password);
-                res.redirect('/' + uId);
+    params = req.body;
+    var user = new User(params.email);
+    try {
+        uId = await user.getIdFromEmail();
+        if (uId) {
+            // If a valid, existing user is found, set the password and redirect to the users single-student page
+            await user.setUserPassword(params.password);
+            res.redirect('/dashboard/' + uID);
             }
             else {
-                // If no existing user is found, add a new one
+                // If no existing user is found, add a new one and redirect to success register page
                 newId = await user.addUser(params.email);
-                res.send('Perhaps a page where a new user sets a programme would be good here');
+                res.redirect('/successful-register');
             }
         } catch (err) {
             console.error(`Error while adding password `, err.message);
         }
     });
 
-
-app.get('/add-member', function(req, res) {
-        res.render('addmember');
-    });
+// After register is successful
+app.get('/successful-register', function(req, res) {
+        res.render('afterregister');
+    });    
 
 // Start server on port 3000
 app.listen(3000,function(){
