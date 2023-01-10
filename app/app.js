@@ -15,21 +15,15 @@ app.set('views', './app/views');
 
 // Get the functions in the db.js file to use
 const db = require('./services/db');
+app.use(express.urlencoded({ extended: true }));
+
 
 // Create a route for root - /
 app.get("/dashboard", function(req, res) {
     res.render("dashboard");
 });
 
-//JSON formatted listing of home details
-app.get("/admin", function(req,res) {
-    var sql = 'select h.*, a.admin_name from Home, admin where h.admin_id = a.admin_id';
-    db.query(sql).then(results => {
-        console.log(results);
-        res.json(results);
-    });
-});
-
+//Home-Details Page Code//
 app.get("/homes-details", function(req, res) {
     sql = 'select h.home_name, h.full_address, a.admin_name from Home h, Admin a where h.admin_id = a.admin_id';
     db.query(sql).then(results => {
@@ -39,11 +33,23 @@ app.get("/homes-details", function(req, res) {
     });
 });
 
-
-
+//Login Page Code//
 app.get('/login', function(req, res) {
         res.render('login');
     });
+
+app.post('/add-note', function (req, res) {
+    // Adding a try/catch block which will be useful later when we add to the database
+    try {
+        // Just a console.log for now to check we are receiving the form field values
+        console.log(req.body);
+     } catch (err) {
+         console.error(`Error while adding note `, err.message);
+     }
+     // Just a little output for now
+     res.send('form submitted');
+
+});
 
 // Check submitted email and password pair
 app.post('/authenticate', async function (req, res) {
