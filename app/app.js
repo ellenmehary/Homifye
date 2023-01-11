@@ -88,9 +88,9 @@ app.post('/set-password', async function (req, res) {
     try {
         uId = await user.getIdFromEmail();
         if (uId) {
-            // If a valid, existing user is found, set the password and redirect to the users single-student page
+            // If a valid, existing user is found, set the password and redirect to the dashboard page
             await user.setUserPassword(params.password);
-            res.redirect('/dashboard/' + uID);
+            res.redirect('dashboard');
             }
             else {
                 // If no existing user is found, add a new one and redirect to success register page

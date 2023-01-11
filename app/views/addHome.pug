@@ -1,7 +1,7 @@
 doctype html
 | PASTE YOUR HTML CODE HERE
 head
-  title Add members
+  title Add House Details
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
@@ -19,7 +19,7 @@ head
     .bgimg-1 {
     background-position: center;
     background-size: cover;
-    background-image: url("/2.jpg");
+    background-image: url("img/2.jpg");
     min-height: 100%;
     }
     .w3-bar .w3-button {
@@ -133,17 +133,20 @@ head
 // Navbar (sit on top)
 .w3-top
   #myNavbar.w3-bar.w3-black.w3-card
-    a.w3-bar-item.w3-button.w3-wide(href='/') Homifye
+    a.w3-bar-item.w3-button.w3-wide(href='login') Homifye
+    .w3-right.w3-hide-small
+      a.w3-bar-item.w3-button(href='/dashboard') Dashboard
 // Header with full-height image
 header#home.bgimg-1.w3-display-container.w3-grayscale-min
   .w3-display-left.w3-text-white(style='padding:48px')
     .register-wrapper
-      form.form(action='/set-password' method='POST')
-        h2  Register Here
+      form.form(action='')
+        h2  Add House
         .input-group
-          input#email(type='text' name='email' required='')
-          label(for='email') Email Address
+          input#membername(type='text' name='firstname' required='')
+          label(for='Homename') House Name
         .input-group
-          input#password(type='password' name='password' required='')
-          label(for='phone') Password
+          input#membername(type='text' name='lastname' required='')
+          label(for='address') Address
+        .input-group
         input.submit-btn(type='submit' value='Add')
