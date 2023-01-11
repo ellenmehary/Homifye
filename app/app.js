@@ -52,11 +52,14 @@ app.get('/login', function(req, res) {
 // Check submitted email and password pair
 app.post('/authenticate', async function (req, res) {
     params = req.body;
-    var user = new User(params.email);
+    console.log(params);
+    var user = new User(params.loginUser);
+    console.log(user);
     try {
         uId = await user.getIdFromEmail();
+        console.log(uId);
         if (uId) {
-            match = await user.authenticate(params.password);
+            match = await user.authenticate(params.loginPassword);
             if (match) {
                 res.redirect('/dashboard');
             }
